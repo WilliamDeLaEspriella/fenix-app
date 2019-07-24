@@ -11,16 +11,23 @@ Future<Platform> getUSer() async {
 //  return postFromJson(response.body);
 }
 
-Future<Response> createPost(e, p) async {
+Future<Response> sign_in(e, p) async {
   Map<String, dynamic> body = {'email': e, 'password': p};
-  print('json_login: ${body}');
   Response response;
-//  final response = await http.post(ApiUrl.URL_LOGIN, body: json.encode(body));
-  print(
-    ApiUrl.URL_LOGIN,
-  );
   try {
     response = await Dio().post(ApiUrl.URL_LOGIN, data: body);
+  } on DioError catch (e) {
+    print(e.response.data);
+    return e.response;
+  }
+  return response;
+}
+
+Future<Response> sign_up(options) async {
+  Map<String, dynamic> body = options;
+  Response response;
+  try {
+    response = await Dio().post(ApiUrl.URL_SIGN_UP, data: body);
   } on DioError catch (e) {
     print(e.response.data);
     return e.response;

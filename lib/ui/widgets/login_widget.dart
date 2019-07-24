@@ -136,13 +136,16 @@ class _LoginWidget extends State<LoginWidget> {
       return null;
   }
 
+
+
   callAPI() {
-    createPost(emailController.text, passwordController.text).then((response) {
+    sign_in(emailController.text, passwordController.text).then((response) {
       if (response.statusCode == 200) {
         print(response.data);
         Scaffold.of(context).showSnackBar(SnackBar(content: Text('OK!!')));
-      }else {
-        Scaffold.of(context).showSnackBar(SnackBar(content: Text(response.data['error'])));
+      } else {
+        Scaffold.of(context)
+            .showSnackBar(SnackBar(content: Text(response.data['error'])));
         print(response.statusCode);
       }
     });
@@ -150,10 +153,6 @@ class _LoginWidget extends State<LoginWidget> {
 
   loginEvent() {
     if (_formKey.currentState.validate()) {
-      // If the form is valid, display a snackbar. In the real world, you'd
-      // often want to call a server or save the information in a database
-//      Scaffold.of(context)
-//          .showSnackBar(SnackBar(content: Text('Processing Data')));
       callAPI();
     }
   }
