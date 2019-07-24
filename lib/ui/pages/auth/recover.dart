@@ -23,15 +23,15 @@ class RecoverPasswordPage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
-                    Text("Recover Password",style: TextStyle(
+                    Text("Recuperar Contraseña",style: TextStyle(
                       fontSize: 20.0
                     ),),
                     const SizedBox(height: 10.0),
-                    Text("We will send the Confirmation Code through SMS\nPlease type your Mobile number below."),
+                    Text("Enviaremos el código de confirmación a través del email. Escriba su email a continuación."),
                     const SizedBox(height: 20.0),
                     TextField(
                       decoration: InputDecoration(
-                        hintText: "Mobile Number"
+                        hintText: "Email"
                       ),
                     ),
                     const SizedBox(height: 20.0),
@@ -40,7 +40,7 @@ class RecoverPasswordPage extends StatelessWidget {
                       child: RaisedButton(
                         color: Theme.of(context).primaryColor,
                         textColor: Colors.white,
-                        child: Text("Recover".toUpperCase()),
+                        child: Text("Recuperar".toUpperCase()),
                         onPressed: (){},
                       )
                     ),
@@ -49,14 +49,14 @@ class RecoverPasswordPage extends StatelessWidget {
                       children: <Widget>[
                         Expanded(child: Divider(color: Colors.grey.shade600,)),
                         const SizedBox(width: 10.0),
-                        Text("Having problems?", style: smallText,),
+                        Text("Algun problema?", style: smallText,),
                         const SizedBox(width: 10.0),
                         Expanded(child: Divider(color: Colors.grey.shade600,)),
                       ],
                     ),
                     const SizedBox(height: 20.0),
                     GestureDetector(
-                      child: Text("Contact Us".toUpperCase(), style: TextStyle(
+                      child: Text("Contactenos".toUpperCase(), style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600
                       ),),
